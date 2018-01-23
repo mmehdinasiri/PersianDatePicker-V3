@@ -1,199 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta charset="UTF-8">
 
-    <title>PersianDatePicker</title>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap-theme.min.css">
+	<link href='css/jquery.Bootstrap-PersianDateTimePicker.css' rel='stylesheet' />
+
+	<link href='css/style.css' rel='stylesheet' />
+
+	<script src="lib/jquery/dist/jquery.min.js"></script>	
+	<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src='js/jalaali.js'></script>
+	<script src='js/jquery.Bootstrap-PersianDateTimePicker.js'></script>
+	<script src='js/jdate.min.js'></script>
 
 
-    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="MdBootstrapPersianDateTimePicker/jquery.Bootstrap-PersianDateTimePicker.css">
-
-    <script src="./jquery.js"></script>
-    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <script src="./jDate/jdate.min.js" type="text/javascript" charset="utf-8"></script>
-
-    <style>
-        body{
-            font-family: Tahoma
-        }
-        .popover {
-            min-width: 340px;
-        }
-        .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus{
-            outline: none;
-        }
-        [data-name="md-datetimepicker-title"]{
-            padding: 10px 15px;
-            font-size: 16px;
-            font-weight: 400;
-        }
-        [data-name="md-persiandatetimepicker-headertable"].table .btn{
-            background: unset;
-            color:#fff;
-            background-color: #009933;
-            padding: 0px 8px;
-            font-size: 14px;
-            height: 30px;
-            border-radius: 12px;
-            text-shadow: unset;
-            font-weight: bold;
-        }
-        .btn-default.active.focus,
-        .btn-default.active:focus, 
-        .btn-default.active:hover, 
-        .btn-default:active.focus,
-        .btn-default:active:focus,
-        .btn-default:active:hover,
-        .open>.dropdown-toggle.btn-default.focus,
-        .open>.dropdown-toggle.btn-default:focus,
-        .open>.dropdown-toggle.btn-default:hover{
-            background-color: #00cc44;
-            color:#fff;
-        }
-        .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
-            background-color: #ff6600;
-            color:#fff;
-            background-image: unset;
-        }
-
-        [data-name="md-persiandatetimepicker-weekdaysnames"]{
-            color: #ff6600;
-        }
-        .text-danger{
-            color: unset;
-        }
-        [data-name="md-persiandatetimepicker"] table.table td{
-            padding: 5px;
-        }
-        [data-name="day"]:hover {
-            background: #eee;
-        }
-        [data-name="md-persiandatetimepicker-timepicker"].table input{
-            height: 30px;
-            font-size: 15px;
-        }
-        [data-name="md-persiandatetimepicker"] table.table td {
-            padding: 7px 5px;
-            border-radius: 12px;
-            font-size: 14px;
-            transition: all 0.2s ease-in-out;
-        }
-    
-        .bg-info{
-            background-color: #ff6600;
-            color: #fff !important;
-        }
-        [data-name="day"]:hover {
-            background-color: #ff6600;
-            color: #fff !important;
-        }
-    </style> 
-
-    
+	<title>RegatePersianDateTimePicker</title>
 </head>
-
-
 <body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class='persianDateTimePicker__inputBox'>
+			        <input class='form-control persianDateTimePicker__data-check' data-check='getTimeA' tabindex='-1' type='text' name='getTimeA' require>
+			        <input class='form-control' data-target='getTimeA' type='text'>
+			        <i class='persianDateTimePicker__clear fa fa-times' data-target='getTimeA'></i>
+			        <button class='btn btn-info' type='submit'>تایید</button>
+			    </div>
+			</div>
+		</div>
+	</div>
+	 
 
-    <form>
-       
-        <button class="btn btn-success" data-input="getTimeA" type='button'>انتخاب تاریخ</button>
-        <input  data-target="getTimeA"  type="text"  required   value="2015-09-08 21:42:29">
-        <input  data-Check="getTimeA" type="text"  style=""  required>
-        <button type="submit" value="Submit" class="sb">Submit</button>  
-        
-        
-        <script type="text/javascript">
-            $(function () {
-
-            var name = "getTimeA"
-
-
-            //init date picker
-            $('[data-input='+name+']').MdPersianDateTimePicker({
-                Placement: 'bottom',        
-                Trigger: 'click',
-                EnableTimePicker: true,
-                TargetSelector: '[data-target='+name+']',
-                GroupId: '',
-                Format: 'yyyy/MM/dd HH:mm:ss',       
-                EnglishNumber: true,
-            });
-
-            //init check
-            var jalaliDate = convertor(name)
-            $('[data-target='+name+']').val(jalaliDate);
-            var strLength = $('[data-target='+name+']').val()
-            if( !(strLength.length == 0) ){
-                checker()
-            }
-            
-
-           //update checker 
-            $('[data-target='+name+']').on("change" ,function(){
-                checker()
-            })
-        
-            // convert miladi date to jalali
-            function convertor(target){
-                var initDat = $('[data-target='+name+']').val()
-                if( initDat != ''){
-                    var JDate = require('jdate');
-                    var jdate = new JDate;  
-                    var initDat = initDat.split(" ");
-                    var initTime = initDat[1];
-                    initDat = initDat[0].split('-')
-                    jdate.setFullYear(initDat[0])
-                    jdate.setMonth(initDat[1])
-                    jdate.setDate(initDat[2])
-                    initDat = JDate.to_jalali(jdate)
-
-                    if( initDat[1] < 10 ){
-                        initDat[1] = "0" + initDat[1] ;
-                    }
-                    if( initDat[2] < 10 ){
-                        initDat[2] = "0" + initDat[2] 
-                    }
-
-                    initDat = initDat.join('/')
-                    if (initTime == null){
-                        initTime = '00'+':'+'00'+':'+'00';
-                    }
-                    var finalDat = initDat+" "+initTime
-                        return finalDat;
-                }
-            }
-
-            //update checker function
-            function checker(){
-                var jalaliDat = $('[data-input='+name+']').MdPersianDateTimePicker('getDate');
-                console.log(jalaliDat + 'erere')
-                var year = (jalaliDat).getFullYear();
-                var month = (jalaliDat).getMonth() + 1 ;
-                var day = (jalaliDat).getDate();
-                var hours = (jalaliDat).getHours();
-                var minutes = (jalaliDat).getMinutes();
-                var Seconds = (jalaliDat).getSeconds();
-                 if( month < 10 ){
-                     month = "0" + month ;
-                 }
-                 if( day < 10 ){
-                     day = "0" + day 
-                 }
-                $('[data-Check='+name+']').val(year+ '-' +month+ '-'+day+ " " +hours+ ':'+minutes+ ':'+Seconds)
-            }
-
-            
-        });  
-        </script>
-    </form>
-       
-        <script src="MdBootstrapPersianDateTimePicker/jquery.Bootstrap-PersianDateTimePicker.js"></script>
-        <script src="MdBootstrapPersianDateTimePicker/jalaali.js"></script>
-        
+    <script src='js/RegatePersianDateTimePicker.js'></script>
+	<script>
+		 $(function () {
+            initDateTimePicker('getTimeA')
+        })
+	</script>
 </body>
 </html>

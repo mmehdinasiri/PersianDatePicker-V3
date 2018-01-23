@@ -1,0 +1,161 @@
+
+    .persianDateTimePicker {
+        min-width: 250px;
+        font-family: inherit;
+        font-family: 12px;
+        right: 195px;
+        transition: all 0.2s ease-in-out;
+    }
+    @@media (max-width:785px){
+        .persianDateTimePicker {
+            right: 15px;
+        } 
+    }
+    .persianDateTimePicker.bottom > .arrow {
+        display: none;
+    }
+    .persianDateTimePicker [data-target] {
+        direction: ltr;
+        margin: 10px;
+        width: 240px;
+        position: relative;
+    }
+    .persianDateTimePicker [data-check] {
+        direction: ltr;
+        margin: 10px;
+        width: 240px;
+        position: relative;
+    }
+    .persianDateTimePicker .btn.active.focus,
+    .persianDateTimePicker .btn.active:focus,
+    .persianDateTimePicker .btn.focus,
+    .persianDateTimePicker .btn:active.focus,
+    .persianDateTimePicker .btn:active:focus,
+    .persianDateTimePicker .btn:focus {
+        outline: none;
+    }
+    .persianDateTimePicker .table-striped > tbody > tr:nth-of-type(odd) {
+        background-color: unset;
+    }
+    .persianDateTimePicker [data-name='md-datetimepicker-title'] {
+        padding: 10px 15px;
+        font-size: 12px;
+        font-weight: 400;
+        font-family: inherit;
+    }
+    .persianDateTimePicker [data-name='md-datetimepicker-popovercontent'] a[data-name='go-today'] {
+        padding: 10px 15px;
+        font-size: 12px;
+        font-weight: 400;
+        font-family: inherit;
+    }
+    .persianDateTimePicker [data-name='md-persiandatetimepicker-headertable'].table .btn {
+        background: unset;
+        color: #fff;
+        background-color: #009933;
+        padding: 0px 8px;
+        font-size: 12px;
+        height: 25px;
+        border-radius: 12px;
+        text-shadow: unset;
+        font-weight:normal;
+    }
+    .persianDateTimePicker .btn-default.active.focus,
+    .persianDateTimePicker .btn-default.active:focus,
+    .persianDateTimePicker .btn-default.active:hover,
+    .persianDateTimePicker .btn-default:active.focus,
+    .persianDateTimePicker .btn-default:active:focus,
+    .persianDateTimePicker .btn-default:active:hover,
+    .persianDateTimePicker .open > .dropdown-toggle.btn-default.focus,
+    .persianDateTimePicker .open > .dropdown-toggle.btn-default:focus,
+    .persianDateTimePicker .open > .dropdown-toggle.btn-default:hover {
+        background-color: #00cc44;
+        color: #fff;
+    }
+    .persianDateTimePicker .dropdown-menu{
+        min-width:120px;
+    }
+    .persianDateTimePicker .dropdown-menu .divider {
+        margin: 5px 0;
+    }
+    .persianDateTimePicker .dropdown-menu > li > a {
+        font-size: 12px;
+        padding:2px 15px;
+    }
+     .persianDateTimePicker .dropdown-menu > li > a:focus,
+        .persianDateTimePicker .dropdown-menu > li > a:hover {
+            background-color: #ff6600;
+            color: #fff;
+            background-image: unset;
+        }
+    .persianDateTimePicker [data-name='md-persiandatetimepicker-weekdaysnames'] {
+        color: #ff6600;
+    }
+    .persianDateTimePicker .text-danger {
+        color: unset;
+    }
+    .persianDateTimePicker [data-name='md-persiandatetimepicker'] table.table td {
+        border-radius: 12px;
+        transition: all 0.2s ease-in-out;
+        font-size: 12px !important;
+        padding: 2px 0;
+        width: 36px;
+        font-weight:normal !important;
+    }
+    .persianDateTimePicker [data-name='day']:hover {
+        background: #eee;
+    }
+    .persianDateTimePicker [data-name='md-persiandatetimepicker-timepicker'].table input {
+        height: 30px;
+        font-size: 15px;
+    }
+
+    .persianDateTimePicker .bg-info {
+        background-color: #ff6600;
+        color: #fff !important;
+    }
+    .persianDateTimePicker [data-name='day']:hover {
+        background-color: #ff6600;
+        color: #fff !important;
+    }
+    .persianDateTimePicker [data-name='today'] {
+        background-color: #11c7c5;
+    }
+    .persianDateTimePicker__inputBox {
+        position: relative;
+        direction: ltr;
+    }
+    .persianDateTimePicker__clear {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        cursor: pointer;
+        display: none;
+    }
+    .persianDateTimePicker__clear::before {
+        content: '\f00d';
+    }
+    .persianDateTimePicker__data-check{
+        position:absolute;
+       opacity:0;
+       z-index:-1;
+    }
+    .table > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > th, .table > caption + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > td, .table > thead:first-child > tr:first-child > td {
+        padding:0 !important;
+    }
+    .persianDateTimePicker [data-name='md-persiandatetimepicker-timepicker'].table input{
+        font-size:12px;
+        height:20px;
+    }
+    .persianDateTimePicker [data-name='md-datetimepicker-popovercontent'] a[data-name='go-today']{
+        padding:0 10px;
+    }
+    .persianDateTimePicker [data-name='md-datetimepicker-title'] {
+        padding: 5px 10px;
+    }
+    .popover.bottom{
+        margin-top:0;
+    }
+    .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+        border-color: rgba(27, 31, 35, 0.2);
+    }
